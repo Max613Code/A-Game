@@ -89,11 +89,24 @@ public class Shooter : MonoBehaviour, IShooter
     {
         while (shooting)
         {
-            yield return new WaitForSeconds(waitTime);
-            GameObject Bullet = (GameObject)Instantiate(bullet, firepoint.transform.position, partToRotate.transform.rotation);
-            Bullet.GetComponent<Bullet>().direction = partToRotate.transform.rotation;
-            if (bulletSpeed != -1)
-                Bullet.GetComponent<Bullet>().speed = bulletSpeed;
+            if (bullet.name == "Bullet")
+            {
+                yield return new WaitForSeconds(waitTime);
+                GameObject Bullet = (GameObject) Instantiate(bullet, firepoint.transform.position,
+                    partToRotate.transform.rotation);
+                Bullet.GetComponent<Bullet>().direction = partToRotate.transform.rotation;
+                if (bulletSpeed != -1)
+                    Bullet.GetComponent<Bullet>().speed = bulletSpeed;
+            }
+            else if (bullet.name == "BulletExplosion")
+            {
+                yield return new WaitForSeconds(waitTime);
+                GameObject Bullet = (GameObject) Instantiate(bullet, firepoint.transform.position,
+                    partToRotate.transform.rotation);
+                Bullet.GetComponent<BulletExploding>().direction = partToRotate.transform.rotation;
+                if (bulletSpeed != -1)
+                    Bullet.GetComponent<BulletExploding>().speed = bulletSpeed;
+            }
         }
     }
 }

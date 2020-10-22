@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\chong\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\chong\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_A Game.-818951689.00" t="ExcludeRecursive" />
-    <e p="C:\Users\chong\Desktop\UnityProjects\A Game" t="IncludeRecursive">
+    <e p="C:\Users\chong\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_A Game.-1216436389.00" t="ExcludeRecursive" />
+    <e p="C:\Users\chong\Documents\GitHub\A-Game\A Game" t="IncludeRecursive">
       <e p="A Game.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Bullet.cs" t="Include" />
+          <e p="BulletExploding.cs" t="Include" />
           <e p="IBullet.cs" t="Include" />
           <e p="IShooter.cs" t="Include" />
           <e p="Player.cs" t="Include" />

@@ -54,34 +54,35 @@
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\Shooter.cs" />
      <Compile Include="Assets\Scripts\IBullet.cs" />
-     <Compile Include="Assets\Scripts\IShooter.cs" />
      <Compile Include="Assets\Scripts\ShooterClump.cs" />
+     <Compile Include="Assets\Scripts\IShooter.cs" />
+     <Compile Include="Assets\Scripts\BulletExploding.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/chong/Desktop/UnityProjects/A Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

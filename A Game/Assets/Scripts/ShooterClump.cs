@@ -13,13 +13,13 @@ public class ShooterClump : MonoBehaviour, IShooter
     public float waitTime = 3;
     public float bulletAmount = 5;
     public float clumpWaitTime = 1;
-    
+
     public float bulletSpeed = 0.1f;
-    
+
 
     public bool shooting = true;
-    
-    
+
+
     private Vector3 targetPoint;
     private Quaternion targetRotation;
 
@@ -97,18 +97,37 @@ public class ShooterClump : MonoBehaviour, IShooter
     {
         while (shooting)
         {
-            yield return new WaitForSeconds(waitTime);
-            for (int i = 0; i < bulletAmount; i++)
+            if (bullet.name == "Bullet")
             {
-                GameObject Bullet = (GameObject)Instantiate(bullet, firepoint.transform.position, partToRotate.transform.rotation);
-                Bullet.GetComponent<Bullet>().direction = partToRotate.transform.rotation;
-                if (bulletSpeed != -1)
-                    Bullet.GetComponent<Bullet>().speed = bulletSpeed;
-                
-                if (i!=bulletAmount-1)
-                    yield return new WaitForSeconds(clumpWaitTime);
+                yield return new WaitForSeconds(waitTime);
+                for (int i = 0; i < bulletAmount; i++)
+                {
+                    GameObject Bullet = (GameObject) Instantiate(bullet, firepoint.transform.position,
+                        partToRotate.transform.rotation);
+                    Bullet.GetComponent<Bullet>().direction = partToRotate.transform.rotation;
+                    if (bulletSpeed != -1)
+                        Bullet.GetComponent<Bullet>().speed = bulletSpeed;
+
+                    if (i != bulletAmount - 1)
+                        yield return new WaitForSeconds(clumpWaitTime);
+                }
+            } 
+            else if (bullet.name == "BulletExplosion")
+            {
+                yield return new WaitForSeconds(waitTime);
+                for (int i = 0; i < bulletAmount; i++)
+                {
+                    GameObject Bullet = (GameObject) Instantiate(bullet, firepoint.transform.position,
+                        partToRotate.transform.rotation);
+                    Bullet.GetComponent<BulletExploding>().direction = partToRotate.transform.rotation;
+                    if (bulletSpeed != -1)
+                        Bullet.GetComponent<BulletExploding>().speed = bulletSpeed;
+
+                    if (i != bulletAmount - 1)
+                        yield return new WaitForSeconds(clumpWaitTime);
+                }
             }
-            
+
         }
     }
 }
