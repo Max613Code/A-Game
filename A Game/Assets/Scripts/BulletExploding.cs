@@ -69,4 +69,17 @@ public class BulletExploding : MonoBehaviour, IBullet
         yield return new WaitForSeconds(explosionWaitTime);
         StartCoroutine(Explode());
     }
+
+    public void SetUp(float Speed, float ExplosionWaitTime, float ExplosionRadius, bool ExplodeOnDestroy,
+        float ExplosionTime, Material ExplosionMaterial, Quaternion Direction)
+    {
+        speed = Speed;
+        explosionWaitTime = ExplosionWaitTime;
+        explosionRadius = ExplosionRadius;
+        explodeOnDestroy = ExplodeOnDestroy;
+        explosionTime = ExplosionTime;
+        if (ExplosionMaterial != null)
+            explosionMaterial = ExplosionMaterial;
+        direction = Direction;
+    }
 }

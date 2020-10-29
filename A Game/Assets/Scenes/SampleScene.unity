@@ -567,6 +567,10 @@ PrefabInstance:
       propertyPath: shooting
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4530082785390908667, guid: 54636a44036331a40a5afcabacef7d0c, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2582786231677798668, guid: c5cc74a3027aad149ba741eeaf8becde, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54636a44036331a40a5afcabacef7d0c, type: 3}
 --- !u!1001 &4852809408218967059

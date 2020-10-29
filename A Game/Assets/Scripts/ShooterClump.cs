@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShooterClump : MonoBehaviour, IShooter
+public class ShooterClump : ShooterBase, IShooter
 {
     public GameObject partToRotate;
     public GameObject bullet;
@@ -24,6 +24,14 @@ public class ShooterClump : MonoBehaviour, IShooter
     private Quaternion targetRotation;
 
     private float xrotation, yrotation, zrotation;
+    
+    //Exploding Bullet settings
+    public float explosionWaitTime = 2;
+    public float explosionRadius = 2;
+    public bool explodeOnDestroy = true;
+    public float explosionTime = 1;
+    public Material explosionMaterial;
+    public Quaternion direction;
 
     // Start is called before the first frame update
     void Start()
@@ -119,9 +127,10 @@ public class ShooterClump : MonoBehaviour, IShooter
                 {
                     GameObject Bullet = (GameObject) Instantiate(bullet, firepoint.transform.position,
                         partToRotate.transform.rotation);
-                    Bullet.GetComponent<BulletExploding>().direction = partToRotate.transform.rotation;
-                    if (bulletSpeed != -1)
-                        Bullet.GetComponent<BulletExploding>().speed = bulletSpeed;
+                    var script = Bullet.GetComponent<BulletExploding>();
+                    direction = partToRotate.transform.rotation;
+                    script.SetUp(bulletSpeed, explosionWaitTime, explosionRadius, explodeOnDestroy, explosionTime, explosionMaterial,
+                        direction);
 
                     if (i != bulletAmount - 1)
                         yield return new WaitForSeconds(clumpWaitTime);

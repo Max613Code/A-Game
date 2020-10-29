@@ -14,7 +14,10 @@
           <e p="IShooter.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Shooter.cs" t="Include" />
+          <e p="ShooterBase.cs" t="Include" />
           <e p="ShooterClump.cs" t="Include" />
+          <e p="ShooterClumpEditor.cs" t="Include" />
+          <e p="ShooterEditor.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
