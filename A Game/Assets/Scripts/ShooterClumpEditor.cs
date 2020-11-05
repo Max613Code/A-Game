@@ -17,6 +17,7 @@ public class ShooterClumpEditor : Editor
     SerializedProperty _bulletAmount;
     SerializedProperty _clumpWaitTime;
     SerializedProperty _bulletSpeed;
+    SerializedProperty _bulletSize;
     SerializedProperty _shooting;
     SerializedProperty _explosionWaitTime;
     SerializedProperty _explosionRadius;
@@ -24,6 +25,10 @@ public class ShooterClumpEditor : Editor
     SerializedProperty _explosionTime;
     SerializedProperty _explosionMaterial;
     SerializedProperty _direction;
+
+    private SerializedProperty _homing;
+    private SerializedProperty _bulletTurnSpeed;
+    private SerializedProperty _homingDestroyTime;
     
 
     public bool shooting = true;
@@ -39,6 +44,7 @@ public class ShooterClumpEditor : Editor
         _bulletAmount = serializedObject.FindProperty("bulletAmount");
         _clumpWaitTime = serializedObject.FindProperty("clumpWaitTime");
         _bulletSpeed = serializedObject.FindProperty("bulletSpeed");
+        _bulletSize = serializedObject.FindProperty("bulletSize");
         _shooting = serializedObject.FindProperty("shooting");
         _explosionWaitTime = serializedObject.FindProperty("explosionWaitTime");
         _explosionRadius = serializedObject.FindProperty("explosionRadius");
@@ -46,6 +52,9 @@ public class ShooterClumpEditor : Editor
         _explosionTime = serializedObject.FindProperty("explosionTime");
         _explosionMaterial = serializedObject.FindProperty("explosionMaterial");
         _direction = serializedObject.FindProperty("direction");
+        _homing = serializedObject.FindProperty("homing");
+        _bulletTurnSpeed = serializedObject.FindProperty("bulletTurnSpeed");
+        _homingDestroyTime = serializedObject.FindProperty("homingDestroyTime");
 
     }
 
@@ -61,6 +70,7 @@ public class ShooterClumpEditor : Editor
         EditorGUILayout.PropertyField(_bulletAmount);
         EditorGUILayout.PropertyField(_clumpWaitTime);
         EditorGUILayout.PropertyField(_bulletSpeed);
+        EditorGUILayout.PropertyField(_bulletSize);
         EditorGUILayout.PropertyField(_shooting);
 
         if (_bullet.objectReferenceValue.name == "BulletExplosion")
@@ -71,6 +81,14 @@ public class ShooterClumpEditor : Editor
             EditorGUILayout.PropertyField(_explosionTime);
             EditorGUILayout.PropertyField(_explosionMaterial);
             EditorGUILayout.PropertyField(_direction);
+        }
+        
+        EditorGUILayout.PropertyField(_homing);
+
+        if (_homing.boolValue)
+        {
+            EditorGUILayout.PropertyField(_bulletTurnSpeed);
+            EditorGUILayout.PropertyField(_homingDestroyTime);
         }
 
         serializedObject.ApplyModifiedProperties();

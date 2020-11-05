@@ -6,19 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="d5a56507-52a8-4d3b-9ed5-3ca2a54a1924" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.A Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A Game/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A Game/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A Game/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.A Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletExploding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletExploding.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shooter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShooterClump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShooterClump.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShooterClumpEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShooterClumpEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShooterEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShooterEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1f/1f9854d9b6e881b84e264e2abd7988fd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/29/2994f7780d3e3b4f8dcd55c83eecf411" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2f/2f995d51ac0d6df733521b06df17e8e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/4c/4cd49814a1b8e9222c440f1fdae3c452" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d5/d57ffd4ebd4c7a56d7bd0b358543fa20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/da/daba0e242dc69c2895e1cbd30ca036f0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/c8/c8f75a433309aaac2a3a3c8a515f5b56.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/c8/c8f75a433309aaac2a3a3c8a515f5b56.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/55/551422ed2c317b8bf784a6a506d1b183.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/55/551422ed2c317b8bf784a6a506d1b183.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
     </list>
@@ -43,14 +54,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/OOO.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/IShooter.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/IBullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShooterBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Debugging.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BulletExploding.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ShooterEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ShooterClumpEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Shooter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShooterClump.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ShooterEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ShooterClumpEditor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iYhOJIRQI452PEIQ0Ln0Osu9GY" />
@@ -109,6 +121,8 @@
       <workItem from="1602783459170" duration="560000" />
       <workItem from="1602784762798" duration="4387000" />
       <workItem from="1603388150248" duration="3517000" />
+      <workItem from="1603993524505" duration="2288000" />
+      <workItem from="1604601001703" duration="2642000" />
     </task>
     <servers />
   </component>
@@ -137,7 +151,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Shooter.cs</url>
-          <line>47</line>
+          <line>52</line>
           <properties documentPath="C:\Users\chong\Desktop\UnityProjects\A Game\Assets\Scripts\Shooter.cs" initialLine="38" containingFunctionPresentation="method 'Update'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

@@ -11,6 +11,7 @@ public class Shooter : ShooterBase, IShooter
     public float turnSpeed = 1000;
     public float waitTime = 2;
     public float bulletSpeed = 0.1f;
+    public float bulletSize = 0.3f;
     
 
     public bool shooting = true;
@@ -28,6 +29,10 @@ public class Shooter : ShooterBase, IShooter
     public float explosionTime = 1;
     public Material explosionMaterial;
     public Quaternion direction;
+    
+    public bool homing = false;
+    public float bulletTurnSpeed = 5;
+    public float homingDestroyTime = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -105,6 +110,14 @@ public class Shooter : ShooterBase, IShooter
                 Bullet.GetComponent<Bullet>().direction = partToRotate.transform.rotation;
                 if (bulletSpeed != -1)
                     Bullet.GetComponent<Bullet>().speed = bulletSpeed;
+                if (!homing)
+                {
+                    Bullet.GetComponent<Bullet>().SetUp(bulletSize);
+                }
+                else
+                {
+                    Bullet.GetComponent<Bullet>().SetUp(bulletSize, homing, player, bulletTurnSpeed, homingDestroyTime);
+                }
             }
             else if (bullet.name == "BulletExplosion")
             {
@@ -113,7 +126,15 @@ public class Shooter : ShooterBase, IShooter
                     partToRotate.transform.rotation);
                 var script = Bullet.GetComponent<BulletExploding>();
                 direction = partToRotate.transform.rotation;
-                script.SetUp(bulletSpeed, explosionWaitTime, explosionRadius,explodeOnDestroy,explosionTime,explosionMaterial,direction);
+                
+                if (!homing)
+                {
+                    Bullet.GetComponent<BulletExploding>().SetUp(bulletSpeed, explosionWaitTime, explosionRadius,explodeOnDestroy,explosionTime,explosionMaterial,direction, bulletSize);
+                }
+                else
+                {
+                    Bullet.GetComponent<BulletExploding>().SetUp(bulletSpeed, explosionWaitTime, explosionRadius,explodeOnDestroy,explosionTime,explosionMaterial,direction, bulletSize, homing, player, bulletTurnSpeed);
+                }
             }
         }
     }

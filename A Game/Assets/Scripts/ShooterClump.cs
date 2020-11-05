@@ -15,6 +15,7 @@ public class ShooterClump : ShooterBase, IShooter
     public float clumpWaitTime = 1;
 
     public float bulletSpeed = 0.1f;
+    public float bulletSize = 0.3f;
 
 
     public bool shooting = true;
@@ -32,6 +33,10 @@ public class ShooterClump : ShooterBase, IShooter
     public float explosionTime = 1;
     public Material explosionMaterial;
     public Quaternion direction;
+
+    public bool homing = false;
+    public float bulletTurnSpeed = 5;
+    public float homingDestroyTime = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -116,8 +121,20 @@ public class ShooterClump : ShooterBase, IShooter
                     if (bulletSpeed != -1)
                         Bullet.GetComponent<Bullet>().speed = bulletSpeed;
 
+                    Bullet.GetComponent<Bullet>().SetUp(bulletSize);
+
                     if (i != bulletAmount - 1)
                         yield return new WaitForSeconds(clumpWaitTime);
+                    
+                    if (!homing)
+                    {
+                        Bullet.GetComponent<Bullet>().SetUp(bulletSize);
+                    }
+                    else
+                    {
+                        Bullet.GetComponent<Bullet>().SetUp(bulletSize, homing, player, bulletTurnSpeed, homingDestroyTime);
+                    }
+                    
                 }
             } 
             else if (bullet.name == "BulletExplosion")
@@ -130,10 +147,19 @@ public class ShooterClump : ShooterBase, IShooter
                     var script = Bullet.GetComponent<BulletExploding>();
                     direction = partToRotate.transform.rotation;
                     script.SetUp(bulletSpeed, explosionWaitTime, explosionRadius, explodeOnDestroy, explosionTime, explosionMaterial,
-                        direction);
+                        direction, bulletSize);
 
                     if (i != bulletAmount - 1)
                         yield return new WaitForSeconds(clumpWaitTime);
+                    
+                    if (!homing)
+                    {
+                        Bullet.GetComponent<BulletExploding>().SetUp(bulletSpeed, explosionWaitTime, explosionRadius,explodeOnDestroy,explosionTime,explosionMaterial,direction, bulletSize);
+                    }
+                    else
+                    {
+                        Bullet.GetComponent<BulletExploding>().SetUp(bulletSpeed, explosionWaitTime, explosionRadius,explodeOnDestroy,explosionTime,explosionMaterial,direction, bulletSize, homing, player, bulletTurnSpeed);
+                    }
                 }
             }
 

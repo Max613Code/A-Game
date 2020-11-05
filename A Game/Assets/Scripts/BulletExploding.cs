@@ -12,6 +12,14 @@ public class BulletExploding : MonoBehaviour, IBullet
     public float explosionTime = 1;
     public Material explosionMaterial;
     public Quaternion direction;
+    public float size = 0.3f;
+    
+    //Homing parameters
+    public bool homing = false;
+    public float turnSpeed = 5;
+    private GameObject player;
+    
+    private float xrotation, yrotation, zrotation;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +30,63 @@ public class BulletExploding : MonoBehaviour, IBullet
     // Update is called once per frame
     void Update()
     {
+        if (homing)
+        {
+            Debug.Log("homing");
+
+            Vector3 dir = player.transform.position - transform.position;
+            Quaternion lookRotation;
+            
+            if (player.transform.position.z != transform.position.z)
+                    {
+                        if (player.transform.position.x < transform.position.x)
+                        {
+                            lookRotation = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 90, -90);
+                        }
+                        else if (player.transform.position.x == 0)
+                        {
+                            lookRotation = Quaternion.Euler(0, 0, 0);
+                        }
+                        else
+                        {
+                            lookRotation = Quaternion.LookRotation(dir) * Quaternion.Euler(0, -90, 90);
+                        }
+                    }
+                    else
+                    {
+                        if (player.transform.position.x < transform.position.x)
+                        {
+                            lookRotation = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 0, -90);
+                        }
+                        else if (player.transform.position.x == 0)
+                        {
+                            lookRotation = Quaternion.Euler(0, 0, 0);
+                        }
+                        else
+                        {
+                            lookRotation = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 0, 90);
+                        }
+                    }
+            
+                    Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+                    Debug.Log(turnSpeed);
+                    if (transform.position.z == player.transform.position.z)
+                    {
+                        xrotation = rotation.x;
+                        yrotation = rotation.y;
+                    }
+                    else
+                    {
+                        xrotation = 0f;
+                        yrotation = 0f;
+                    }
+
+                    zrotation = rotation.z;
+                    
+                    
+                    direction = Quaternion.Euler(xrotation, yrotation, zrotation);
+        }
+        
         transform.Translate(direction * Vector3.down * speed, Space.World);
 
         if (transform.position.x < -10 || transform.position.x > 10 || transform.position.y < -5 ||
@@ -71,7 +136,7 @@ public class BulletExploding : MonoBehaviour, IBullet
     }
 
     public void SetUp(float Speed, float ExplosionWaitTime, float ExplosionRadius, bool ExplodeOnDestroy,
-        float ExplosionTime, Material ExplosionMaterial, Quaternion Direction)
+        float ExplosionTime, Material ExplosionMaterial, Quaternion Direction, float Size)
     {
         speed = Speed;
         explosionWaitTime = ExplosionWaitTime;
@@ -81,5 +146,25 @@ public class BulletExploding : MonoBehaviour, IBullet
         if (ExplosionMaterial != null)
             explosionMaterial = ExplosionMaterial;
         direction = Direction;
+        size = Size;
+        transform.localScale = new Vector3(size, size, size);
+    }
+
+    public void SetUp(float Speed, float ExplosionWaitTime, float ExplosionRadius, bool ExplodeOnDestroy,
+        float ExplosionTime, Material ExplosionMaterial, Quaternion Direction, float Size, bool Homing, GameObject Player, float TurnSpeed)
+    {
+        speed = Speed;
+        explosionWaitTime = ExplosionWaitTime;
+        explosionRadius = ExplosionRadius;
+        explodeOnDestroy = ExplodeOnDestroy;
+        explosionTime = ExplosionTime;
+        if (ExplosionMaterial != null)
+            explosionMaterial = ExplosionMaterial;
+        direction = Direction;
+        size = Size;
+        transform.localScale = new Vector3(size, size, size);
+        homing = Homing;
+        player = Player;
+        turnSpeed = TurnSpeed;
     }
 }
