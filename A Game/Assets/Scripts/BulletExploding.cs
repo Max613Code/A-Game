@@ -17,6 +17,7 @@ public class BulletExploding : MonoBehaviour, IBullet
     //Homing parameters
     public bool homing = false;
     public float turnSpeed = 5;
+    public float homingDestroyTime = 5;
     private GameObject player;
     
     private float xrotation, yrotation, zrotation;
@@ -25,6 +26,10 @@ public class BulletExploding : MonoBehaviour, IBullet
     void Start()
     {
         StartCoroutine(WaitExplosion());
+        if (homing&& homingDestroyTime != -1)
+        {
+            StartCoroutine(HomingDestory());
+        }
     }
 
     // Update is called once per frame
@@ -108,6 +113,7 @@ public class BulletExploding : MonoBehaviour, IBullet
         if (other.name == "Player")
         {
             other.GetComponent<Player>().health -= 1;
+            UIHandler.UpdateHealthText(other.GetComponent<Player>().health);
             if (explodeOnDestroy)
             {
                 StartCoroutine(Explode());
@@ -134,6 +140,12 @@ public class BulletExploding : MonoBehaviour, IBullet
         yield return new WaitForSeconds(explosionWaitTime);
         StartCoroutine(Explode());
     }
+    
+    public IEnumerator HomingDestory()
+    {
+        yield return new WaitForSeconds(homingDestroyTime);
+        homing = false;
+    }
 
     public void SetUp(float Speed, float ExplosionWaitTime, float ExplosionRadius, bool ExplodeOnDestroy,
         float ExplosionTime, Material ExplosionMaterial, Quaternion Direction, float Size)
@@ -151,7 +163,7 @@ public class BulletExploding : MonoBehaviour, IBullet
     }
 
     public void SetUp(float Speed, float ExplosionWaitTime, float ExplosionRadius, bool ExplodeOnDestroy,
-        float ExplosionTime, Material ExplosionMaterial, Quaternion Direction, float Size, bool Homing, GameObject Player, float TurnSpeed)
+        float ExplosionTime, Material ExplosionMaterial, Quaternion Direction, float Size, bool Homing, GameObject Player, float TurnSpeed, float HomingDestroyTime)
     {
         speed = Speed;
         explosionWaitTime = ExplosionWaitTime;
@@ -166,5 +178,6 @@ public class BulletExploding : MonoBehaviour, IBullet
         homing = Homing;
         player = Player;
         turnSpeed = TurnSpeed;
+        homingDestroyTime = HomingDestroyTime;
     }
 }

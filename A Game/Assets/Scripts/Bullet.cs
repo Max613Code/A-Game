@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour, IBullet
     //Homing parameters
     public bool homing = false;
     public float turnSpeed = 5;
-    public float homingDestoryTime = 5;
+    public float homingDestroyTime = 5;
     private GameObject player;
     
     private float xrotation, yrotation, zrotation;
@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour, IBullet
     // Start is called before the first frame update
     void Start()
     {
-        if (homing&& homingDestoryTime != -1)
+        if (homing&& homingDestroyTime != -1)
         {
             StartCoroutine(HomingDestory());
         }
@@ -109,8 +109,8 @@ public class Bullet : MonoBehaviour, IBullet
 
     public IEnumerator HomingDestory()
     {
-        yield return new WaitForSeconds(homingDestoryTime);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(homingDestroyTime);
+        homing = false;
     }
     
     public void SetUp(float Size)
@@ -126,6 +126,6 @@ public class Bullet : MonoBehaviour, IBullet
         homing = Homing;
         player = Player;
         turnSpeed = TurnSpeed;
-        homingDestoryTime = HomingDestroyTime;
+        homingDestroyTime = HomingDestroyTime;
     }
 }

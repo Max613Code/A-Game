@@ -55,12 +55,13 @@
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\BulletExploding.cs" />
+     <Compile Include="Assets\Scripts\Debugging.cs" />
      <Compile Include="Assets\Scripts\Shooter.cs" />
      <Compile Include="Assets\Scripts\IBullet.cs" />
      <Compile Include="Assets\Scripts\ShooterClump.cs" />
      <Compile Include="Assets\Scripts\IShooter.cs" />
      <Compile Include="Assets\Scripts\ShooterEditor.cs" />
-     <Compile Include="Assets\Scripts\Debugging.cs" />
+     <Compile Include="Assets\Scripts\UIHandler.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

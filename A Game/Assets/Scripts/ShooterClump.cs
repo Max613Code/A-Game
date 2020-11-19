@@ -158,7 +158,7 @@ public class ShooterClump : ShooterBase, IShooter
                     }
                     else
                     {
-                        Bullet.GetComponent<BulletExploding>().SetUp(bulletSpeed, explosionWaitTime, explosionRadius,explodeOnDestroy,explosionTime,explosionMaterial,direction, bulletSize, homing, player, bulletTurnSpeed);
+                        Bullet.GetComponent<BulletExploding>().SetUp(bulletSpeed, explosionWaitTime, explosionRadius,explodeOnDestroy,explosionTime,explosionMaterial,direction, bulletSize, homing, player, bulletTurnSpeed, homingDestroyTime);
                     }
                 }
             }
