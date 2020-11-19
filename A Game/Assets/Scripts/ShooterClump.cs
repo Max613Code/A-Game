@@ -8,7 +8,7 @@ public class ShooterClump : ShooterBase, IShooter
     public GameObject bullet;
     public GameObject player;
     public GameObject firepoint;
-    public float turnSpeed = 1000;
+    public float turnSpeed = 5;
 
     public float waitTime = 3;
     public float bulletAmount = 5;
@@ -164,5 +164,32 @@ public class ShooterClump : ShooterBase, IShooter
             }
 
         }
+    }
+    
+    public void SetUp(GameObject Bullet, float TurnSpeed, float WaitTime, float BulletAmount, float ClumpWaitTime, float BulletSpeed, float BulletSize,
+        bool Shooting, float ExplosionWaitTime, float ExplosionRadius, bool ExplodeOnDestroy, float ExplosionTime,
+        Material ExplosionMaterial, bool Homing, float BulletTurnSpeed, float HomingDestroyTime)
+    {
+        bullet = Bullet;
+        turnSpeed = TurnSpeed;
+        waitTime = WaitTime;
+        bulletAmount = BulletAmount;
+        clumpWaitTime = ClumpWaitTime;
+        bulletSpeed = BulletSpeed;
+        bulletSize = BulletSize;
+        shooting = Shooting;
+        explosionWaitTime = ExplosionWaitTime;
+        explosionRadius = ExplosionRadius;
+        explodeOnDestroy = ExplodeOnDestroy;
+        explosionTime = ExplosionTime;
+        if (ExplosionMaterial)
+        {
+            explosionMaterial = ExplosionMaterial;
+        }
+
+        homing = Homing;
+        bulletTurnSpeed = BulletTurnSpeed;
+        homingDestroyTime = HomingDestroyTime;
+
     }
 }

@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\IShooter.cs" />
      <Compile Include="Assets\Scripts\ShooterEditor.cs" />
      <Compile Include="Assets\Scripts\UIHandler.cs" />
+     <Compile Include="Assets\Scripts\EventsHandler.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/chong/Documents/GitHub/A-Game/A Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

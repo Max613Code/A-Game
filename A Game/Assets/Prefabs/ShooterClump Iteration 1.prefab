@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3511975034415119624}
   - component: {fileID: 8745583351184543516}
   m_Layer: 0
-  m_Name: ShooterClump Iteration 1 1
+  m_Name: ShooterClump Iteration 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,12 +48,22 @@ MonoBehaviour:
   bullet: {fileID: 2582786231677798668, guid: c5cc74a3027aad149ba741eeaf8becde, type: 3}
   player: {fileID: 0}
   firepoint: {fileID: 3511975035175850125}
-  turnSpeed: 1000
+  turnSpeed: 5
   waitTime: 3
   bulletAmount: 5
   clumpWaitTime: 1
   bulletSpeed: 0.1
+  bulletSize: 0.3
   shooting: 1
+  explosionWaitTime: 2
+  explosionRadius: 2
+  explodeOnDestroy: 1
+  explosionTime: 1
+  explosionMaterial: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0, w: 0}
+  homing: 0
+  bulletTurnSpeed: 5
+  homingDestroyTime: 5
 --- !u!1 &3511975035117799024
 GameObject:
   m_ObjectHideFlags: 0

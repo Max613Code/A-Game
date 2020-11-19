@@ -32,7 +32,6 @@ public class Bullet : MonoBehaviour, IBullet
     {
         if (homing)
         {
-            Debug.Log("homing");
 
             Vector3 dir = player.transform.position - transform.position;
             Quaternion lookRotation;
@@ -69,7 +68,6 @@ public class Bullet : MonoBehaviour, IBullet
                     }
             
                     Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-                    Debug.Log(turnSpeed);
                     if (transform.position.z == player.transform.position.z)
                     {
                         xrotation = rotation.x;
@@ -102,6 +100,7 @@ public class Bullet : MonoBehaviour, IBullet
         if (other.name == "Player")
         {
             other.GetComponent<Player>().health -= 1;
+            UIHandler.UpdateHealthText(other.GetComponent<Player>().health);
             Destroy(gameObject);
         }
         Debug.Log("qwer");

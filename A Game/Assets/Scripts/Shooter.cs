@@ -138,4 +138,29 @@ public class Shooter : ShooterBase, IShooter
             }
         }
     }
+
+    public void SetUp(GameObject Bullet, float TurnSpeed, float WaitTime, float BulletSpeed, float BulletSize,
+        bool Shooting, float ExplosionWaitTime, float ExplosionRadius, bool ExplodeOnDestroy, float ExplosionTime,
+        Material ExplosionMaterial, bool Homing, float BulletTurnSpeed, float HomingDestroyTime)
+    {
+        bullet = Bullet;
+        turnSpeed = TurnSpeed;
+        waitTime = WaitTime;
+        bulletSpeed = BulletSpeed;
+        bulletSize = BulletSize;
+        shooting = Shooting;
+        explosionWaitTime = ExplosionWaitTime;
+        explosionRadius = ExplosionRadius;
+        explodeOnDestroy = ExplodeOnDestroy;
+        explosionTime = ExplosionTime;
+        if (ExplosionMaterial)
+        {
+            explosionMaterial = ExplosionMaterial;
+        }
+
+        homing = Homing;
+        bulletTurnSpeed = BulletTurnSpeed;
+        homingDestroyTime = HomingDestroyTime;
+
+    }
 }

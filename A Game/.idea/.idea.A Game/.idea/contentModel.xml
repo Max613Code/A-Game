@@ -11,6 +11,7 @@
           <e p="Bullet.cs" t="Include" />
           <e p="BulletExploding.cs" t="Include" />
           <e p="Debugging.cs" t="Include" />
+          <e p="EventsHandler.cs" t="Include" />
           <e p="IBullet.cs" t="Include" />
           <e p="IShooter.cs" t="Include" />
           <e p="Player.cs" t="Include" />
